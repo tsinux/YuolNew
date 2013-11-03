@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/main_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/main_background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@id/titlebar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/titlebar_background" 
+        >
+
+        <TextView
+            android:id="@id/titlebar_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+       		android:layout_marginTop="6.0dip"
+            android:layout_marginLeft="5.0dip"
+            android:textAppearance="@style/titlebar_title_style"
+            android:text="@string/app_name"
+            
+            />
+
+       
+        <Button
+            android:id="@id/titlebar_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/titlebar_btn_refresh_selector"
+            android:layout_marginTop="8.0dip"
+            android:layout_marginLeft="275.0dip"
+           
+            />
+        <ProgressBar
+            android:id="@id/loadnews_progress"
+            android:layout_width="25.0dip"
+            android:layout_height="25.0dip"
+            android:clickable="false"
+            android:visibility="gone"
+            android:layout_marginRight="20.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_alignParentRight="true"
+            style="?android:attr/progressBarStyleLarge" />
+         
+    </RelativeLayout>
+    <RelativeLayout
+		android:id="@id/categorybar_layout"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/categorybar_background"
+		android:layout_marginTop="-18.0dip"
+		>
+		<Button
+			android:id="@id/category_arrow_right"
+			android:layout_width="6.0dip"
+			android:layout_height="10.0dip"
+			android:background="@drawable/categorybar_right_arrow"
+			android:layout_marginLeft="2.0dip"
+			android:layout_marginRight="10.0dip"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true" />
+		<HorizontalScrollView   
+			android:id="@id/category_scrollview"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="6.0dip"
+			android:scrollbars="none"
+			android:layout_toLeftOf="@id/category_arrow_right"
+			android:layout_centerVertical="true">
+			<LinearLayout
+			    android:orientation="horizontal"
+				android:id="@id/category_layout"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center_vertical"
+			/>	
+		</HorizontalScrollView>		
+	</RelativeLayout>
+    <ListView
+        android:id="@id/news_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/list_separator_line"
+        android:listSelector="@drawable/news_list_item_selector" 
+  	/>
+   
+
+</LinearLayout>
